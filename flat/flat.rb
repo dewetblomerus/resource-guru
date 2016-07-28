@@ -1,3 +1,4 @@
+# Flattens arbitrarily nested arrays
 module Flat
   def self.flatten(input_array)
     check_input(input_array)
@@ -8,16 +9,16 @@ module Flat
 
   def self.check_input(input_array)
     unless input_array.is_a?(Array)
-      raise ArgumentError.new("Only Arrays are allowed")
+      raise ArgumentError, 'Only Arrays are allowed'
     end
   end
 
   def self.nested_iterate(a)
     a.each do |element|
       if element.class == Array
-      	nested_iterate(element)
+        nested_iterate(element)
       else
-	@flat_array << element
+        @flat_array << element
       end
     end
   end

@@ -16,6 +16,6 @@ RSpec.describe Flat do
   end
 
   it 'only accepts arrays as input' do
-    expect{Flat.flatten('hello')}.to raise_error(ArgumentError)
+    expect { Flat.flatten('hello') }.to raise_error(ArgumentError)
   end
 end
