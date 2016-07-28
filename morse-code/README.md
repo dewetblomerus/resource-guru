@@ -1,4 +1,4 @@
-Write your message in `plain_text_message.rb`
+Write your message in `plain_text_message.txt`
 
 run `ruby script.rb`
 
