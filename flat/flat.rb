@@ -17,7 +17,7 @@ module Flat
       if element.class == Array
       	nested_iterate(element)
       else
-	      @flat_array << element
+	@flat_array << element
       end
     end
   end
