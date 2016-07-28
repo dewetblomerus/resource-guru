@@ -1,4 +1,4 @@
-require_relative 'morse_code'
+require_relative '../lib/morse_code'
 
 RSpec.describe MorseCode do
   let(:morse) { MorseCode.new }

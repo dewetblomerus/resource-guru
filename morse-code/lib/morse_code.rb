@@ -12,7 +12,7 @@ end
 # Encodes an alphabetic message to morse code
 class MorseCode
   def initialize
-    load_encoder_hash('international_morse_code_conversion.txt')
+    load_encoder_hash('lib/international_morse_code_conversion.txt')
   end
 
   def encode(message)
