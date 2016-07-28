@@ -16,13 +16,20 @@ class MorseCode
   end
 
   def encode(message)
-    array_message = message.chars
+    check_input(message)
+    array_message = message.upcase.chars
     encoded_array = []
     array_message.each_with_index do |char, i|
       encoded_array << @encoder_hash[char]
       encoded_array << '|' if letters?(char, array_message[i + 1])
     end
     encoded_array.join
+  end
+
+  def check_input(input_message)
+    unless input_message.upcase =~ /\A[A-Z]|\s\z/
+      raise ArgumentError, 'Letters only, we are at war!'
+    end
   end
 
   def letters?(first, second)

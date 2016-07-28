@@ -12,6 +12,22 @@ RSpec.describe MorseCode do
       morse.encode('I')
     ).to eq('..')
   end
+
+  it 'handles a mix of upper and lower case' do
+    expect(
+      morse.encode('i am in TROUBLE')
+    ).to eq('../.-|--/..|-./-|.-.|---|..-|-...|.-..|.')
+  end
+
+  it 'only accepts letters' do
+    expect do
+      morse.encode('#I AM IN TROUBLE')
+    end.to raise_error(ArgumentError)
+
+    expect do
+      morse.encode('2I AM IN TROUBLE')
+    end.to raise_error(ArgumentError)
+  end
 end
 
 RSpec.describe Encryptor do
